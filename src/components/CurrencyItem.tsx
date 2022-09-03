@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { CryptocurrencyInterface, PriceDataInterface } from '../types';
 import { SvgUri } from 'react-native-svg';
 import { usePriceChanges } from '../hooks/usePriceChanges';
@@ -51,7 +51,7 @@ const CurrencyItem: React.FC<CurrencyItemPropsInterface> = ({ currency }) => {
   };
 
   return (
-    <View style={styles.listContainer}>
+    <TouchableOpacity style={styles.listContainer}>
       {/* Image */}
       <View>
         <SvgUri
@@ -87,7 +87,7 @@ const CurrencyItem: React.FC<CurrencyItemPropsInterface> = ({ currency }) => {
           </View>
         )}
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
