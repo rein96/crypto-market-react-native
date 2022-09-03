@@ -4,6 +4,7 @@ import { CryptocurrencyInterface, PriceDataInterface } from '../types';
 import { SvgUri } from 'react-native-svg';
 import { usePriceChanges } from '../hooks/usePriceChanges';
 import { rupiahFormatter } from '../utils';
+import { colors } from '../constants';
 
 interface CurrencyItemPropsInterface {
   currency: CryptocurrencyInterface;
@@ -57,7 +58,7 @@ const CurrencyItem: React.FC<CurrencyItemPropsInterface> = ({ currency }) => {
         {/* Left text container */}
         <View style={styles.leftContent}>
           <Text>{currency.name}</Text>
-          <Text>{currency.currencySymbol}</Text>
+          <Text style={styles.currencySymbol}>{currency.currencySymbol}</Text>
         </View>
 
         {/* Right text container */}
@@ -78,7 +79,7 @@ const styles = StyleSheet.create({
   listContainer: {
     padding: 16,
     borderTopWidth: 1,
-    borderTopColor: '#eeeeee',
+    borderTopColor: colors.ui.primary,
     flex: 1,
     display: 'flex',
     flexDirection: 'row',
@@ -94,11 +95,14 @@ const styles = StyleSheet.create({
   percentageText: {
     textAlign: 'right',
   },
+  currencySymbol: {
+    color: colors.text.secondary,
+  },
   redText: {
-    color: '#ff5a5a',
+    color: colors.text.error,
   },
   greenText: {
-    color: '#1ccb22',
+    color: colors.text.success,
   },
 });
 
