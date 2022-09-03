@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
+  ActivityIndicator,
   FlatList,
+  RefreshControl,
   SafeAreaView,
   StatusBar,
   StyleSheet,
@@ -14,7 +16,15 @@ import { categoryList } from './constants';
 import CategoryItem from './components/CategoryItem';
 
 const MainContainer = () => {
-  const { data } = useCurrencyList();
+  const [refreshing, setRefreshing] = useState(false);
+  const { data, refetch } = useCurrencyList();
+
+  const handleRefresh = () => {
+    setRefreshing(true);
+    refetch();
+    setRefreshing(false);
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       {/* Navbar */}
@@ -39,9 +49,13 @@ const MainContainer = () => {
 
       {/* List */}
       <View style={styles.list}>
+        {refreshing ? <ActivityIndicator /> : null}
         <FlatList
           data={data?.payload}
           renderItem={(currency) => <CurrencyItem currency={currency.item} />}
+          refreshControl={
+            <RefreshControl refreshing={refreshing} onRefresh={handleRefresh} />
+          }
         />
       </View>
     </SafeAreaView>
