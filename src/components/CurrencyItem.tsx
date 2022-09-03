@@ -1,10 +1,11 @@
 import React from 'react';
-import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import { CryptocurrencyInterface, PriceDataInterface } from '../types';
 import { SvgUri } from 'react-native-svg';
 import { usePriceChanges } from '../hooks/usePriceChanges';
 import { rupiahFormatter } from '../utils';
 import { colors } from '../constants';
+import AntDesign from '@expo/vector-icons/AntDesign';
 
 interface CurrencyItemPropsInterface {
   currency: CryptocurrencyInterface;
@@ -33,12 +34,20 @@ const CurrencyItem: React.FC<CurrencyItemPropsInterface> = ({ currency }) => {
 
   const isPlus = !isNegative && !isZero;
 
-  const getTextStyles = () => {
-    if (isNegative) return styles.redText;
+  const getIconName = () => {
+    if (isNegative) return 'caretdown';
 
-    if (isPlus) return styles.greenText;
+    if (isPlus) return 'caretup';
 
-    return {};
+    return;
+  };
+
+  const getColor = () => {
+    if (isNegative) return colors.ui.error;
+
+    if (isPlus) return colors.ui.success;
+
+    return;
   };
 
   return (
@@ -65,9 +74,16 @@ const CurrencyItem: React.FC<CurrencyItemPropsInterface> = ({ currency }) => {
         {priceDetail && (
           <View style={styles.rightContent}>
             <Text>{rupiahFormatter(Number(priceDetail.latestPrice))}</Text>
-            <Text style={[styles.percentageText, getTextStyles()]}>
-              {selectedPercentage}%
-            </Text>
+            <View style={styles.percentageContainer}>
+              <AntDesign
+                name={getIconName()}
+                color={getColor()}
+                style={{ alignSelf: isPlus ? 'flex-end' : 'auto' }}
+              />
+              <Text style={[styles.percentageText, { color: getColor() }]}>
+                {selectedPercentage}%
+              </Text>
+            </View>
           </View>
         )}
       </View>
@@ -92,17 +108,18 @@ const styles = StyleSheet.create({
   },
   leftContent: {},
   rightContent: {},
+  percentageContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+  },
   percentageText: {
     textAlign: 'right',
+    marginLeft: 4,
   },
   currencySymbol: {
     color: colors.text.secondary,
-  },
-  redText: {
-    color: colors.text.error,
-  },
-  greenText: {
-    color: colors.text.success,
   },
 });
 
