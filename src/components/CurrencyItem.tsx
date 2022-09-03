@@ -1,6 +1,7 @@
 import React from 'react';
 import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
 import { CryptocurrencyInterface } from '../types';
+import { SvgUri } from 'react-native-svg';
 
 interface CurrencyItemPropsInterface {
   currency: CryptocurrencyInterface;
@@ -12,14 +13,10 @@ const CurrencyItem: React.FC<CurrencyItemPropsInterface> = ({ currency }) => {
     <View style={styles.listContainer}>
       {/* Image */}
       <View>
-        <Image
-          source={{ uri: currency.logo }}
-          style={{
-            height: 32,
-            width: 32,
-            marginRight: 4,
-            backgroundColor: 'yellow',
-          }}
+        <SvgUri
+          uri={currency.logo}
+          color={currency.color}
+          style={{ height: 32, width: 32 }}
         />
       </View>
 
