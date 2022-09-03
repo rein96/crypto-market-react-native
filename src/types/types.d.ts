@@ -1,3 +1,5 @@
+// node_modules/@expo/vector-icons/build/AntDesign.d.ts
+import type AntDesignIconNameType from '@expo/vector-icons/build/AntDesign';
 export interface PriceDataInterface {
   pair: string;
   latestPrice: string;
@@ -48,4 +50,9 @@ export interface ResponseInterface<T, U = void> {
 export interface PriceChangesResponseInterface
   extends ResponseInterface<PriceDataInterface[]> {
   sortedPricePairData: SortedPricePairInterface;
+}
+
+export interface CategoryListInterface {
+  name: string;
+  iconName: AntDesignIconNameType;
 }
