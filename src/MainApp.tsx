@@ -16,7 +16,7 @@ const MainContainer = () => {
     <SafeAreaView style={styles.container}>
       {/* Navbar */}
       <View style={styles.search}>
-        <Text>FIRST</Text>
+        <Text style={styles.headingText}>Market</Text>
       </View>
       {/* List */}
       <View style={styles.list}>
@@ -36,12 +36,15 @@ const styles = StyleSheet.create({
     borderBottomColor: 'grey',
     borderBottomWidth: 1,
   },
+  headingText: {
+    fontWeight: '700',
+    fontSize: 28,
+  },
   search: {
     padding: 16,
   },
   list: {
     flex: 1,
-    padding: 16,
   },
 });
 
