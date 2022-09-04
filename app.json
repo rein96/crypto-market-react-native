@@ -2,6 +2,8 @@
   "expo": {
     "name": "crypto-market-react-native",
     "slug": "crypto-market-react-native",
+    "privacy": "public",
+    "description": "Cryptocurrency market",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/splash-coin.png",
@@ -12,20 +14,33 @@
       "backgroundColor": "#ffffff"
     },
     "updates": {
-      "fallbackToCacheTimeout": 0
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/e1b1caf8-5bbd-4433-bf1d-9a5bd4335b56"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.rein96.cryptomarketreactnative"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/splash-coin.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.rein96.cryptomarketreactnative"
     },
     "web": {
       "favicon": "./assets/splash-coin.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "e1b1caf8-5bbd-4433-bf1d-9a5bd4335b56"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "sdkVersion"
     }
   }
 }
