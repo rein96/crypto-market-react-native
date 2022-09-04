@@ -1,6 +1,10 @@
 ## Crypto Market Mobile App (React Native)
 
+<div>
 <img width="369" alt="Screen Shot 2022-09-05 at 01 00 19" src="https://user-images.githubusercontent.com/50010891/188327781-ad8798fb-0e7e-4077-a334-625faa0738c5.png">
+
+<img width="369" alt="Screen Shot 2022-09-05 at 01 00 19" src="https://user-images.githubusercontent.com/50010891/188328266-e8b60070-704a-4f28-87ff-5da4a65517a5.jpg">
+</div
 
 ## Tech Stack
 - React Native
