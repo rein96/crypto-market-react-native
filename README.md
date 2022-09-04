@@ -17,9 +17,14 @@
 ## App Preview
 
 1. You could try the app by downloading ```Expo Go``` from App or Play Store
-2. Enter expo URL inside Expo Go
+2. Enter the expo URL inside Expo Go:
 
+iOS:
 ```
-For iOS: exp://u.expo.dev/update/5b723f9f-cef8-4c4e-83ac-ad7332558c14
-For Android: exp://u.expo.dev/update/76b1e155-22dd-470a-a83a-7f0f11335dd9
+exp://u.expo.dev/update/5b723f9f-cef8-4c4e-83ac-ad7332558c14
+```
+
+Android
+```
+exp://u.expo.dev/update/76b1e155-22dd-470a-a83a-7f0f11335dd9
 ```
