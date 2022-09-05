@@ -1,10 +1,10 @@
 import React, { useMemo } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { CryptocurrencyInterface, PriceDataInterface } from '../../types';
+import { CryptocurrencyInterface, PriceDataInterface } from '../../../../types';
 import { SvgUri } from 'react-native-svg';
-import { usePriceChanges } from '../../hooks/usePriceChanges';
-import { rupiahFormatter } from '../../utils';
-import { colors } from '../../constants';
+import { usePriceChanges } from '../../../../hooks/usePriceChanges';
+import { rupiahFormatter } from '../../../../utils';
+import { colors } from '../../../../constants';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import createStyles from './CurrencyItem.style';
 

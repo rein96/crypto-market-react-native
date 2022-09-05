@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { Text, TouchableOpacity } from 'react-native';
-import { CategoryListInterface } from '../../types';
+import { CategoryListInterface } from '../../../../types';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import createStyles from './CategoryItem.style';
 

@@ -1,5 +1,5 @@
 import { StyleSheet, TextStyle, ViewStyle } from 'react-native';
-import { colors } from '../../constants';
+import { colors } from '../../../../constants';
 
 interface Style {
   listContainer: ViewStyle;
