@@ -13,7 +13,7 @@ import CurrencyItem from './components/CurrencyItem';
 import { useCurrencyList } from './hooks/useCurrencyList';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import { categoryList } from './constants';
-import CategoryItem from './components/CategoryItem';
+import CategoryItem from './components/CategoryItem/CategoryItem';
 
 const MainContainer = () => {
   const [refreshing, setRefreshing] = useState(false);
