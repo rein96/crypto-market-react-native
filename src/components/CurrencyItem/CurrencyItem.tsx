@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { CryptocurrencyInterface, PriceDataInterface } from '../types';
+import { CryptocurrencyInterface, PriceDataInterface } from '../../types';
 import { SvgUri } from 'react-native-svg';
-import { usePriceChanges } from '../hooks/usePriceChanges';
-import { rupiahFormatter } from '../utils';
-import { colors } from '../constants';
+import { usePriceChanges } from '../../hooks/usePriceChanges';
+import { rupiahFormatter } from '../../utils';
+import { colors } from '../../constants';
 import AntDesign from '@expo/vector-icons/AntDesign';
+import createStyles from './CurrencyItem.style';
 
 interface CurrencyItemPropsInterface {
   currency: CryptocurrencyInterface;
@@ -17,6 +18,8 @@ const CurrencyItem: React.FC<CurrencyItemPropsInterface> = ({ currency }) => {
 
   const { data: priceChangesResponseData } = usePriceChanges();
 
+  const styles = useMemo(() => createStyles(), []);
+
   const sortedPricePairData = priceChangesResponseData?.sortedPricePairData;
 
   /** symbol in lowercase | ex: 'btc' */
@@ -26,7 +29,7 @@ const CurrencyItem: React.FC<CurrencyItemPropsInterface> = ({ currency }) => {
     sortedPricePairData?.[symbol];
 
   /** For now, set the default to 'day' */
-  const selectedPercentage = priceDetail?.day;
+  const selectedPercentage = priceDetail?.day || '0.00';
 
   const isNegative = selectedPercentage?.[0] === '-';
 
@@ -50,6 +53,11 @@ const CurrencyItem: React.FC<CurrencyItemPropsInterface> = ({ currency }) => {
     return;
   };
 
+  const percentageStyles = useMemo(
+    () => [styles.percentageText, { color: getColor() }],
+    [getColor]
+  );
+
   return (
     <TouchableOpacity style={styles.listContainer}>
       {/* Image */}
@@ -65,24 +73,24 @@ const CurrencyItem: React.FC<CurrencyItemPropsInterface> = ({ currency }) => {
       {/* Content container */}
       <View style={styles.contentContainer}>
         {/* Left text container */}
-        <View style={styles.leftContent}>
+        <View>
           <Text>{currency.name}</Text>
           <Text style={styles.currencySymbol}>{currency.currencySymbol}</Text>
         </View>
 
         {/* Right text container */}
         {priceDetail && (
-          <View style={styles.rightContent}>
-            <Text>{rupiahFormatter(Number(priceDetail.latestPrice))}</Text>
+          <View>
+            <Text style={styles.priceText}>
+              {rupiahFormatter(Number(priceDetail.latestPrice))}
+            </Text>
             <View style={styles.percentageContainer}>
               <AntDesign
                 name={getIconName()}
                 color={getColor()}
                 style={{ alignSelf: isPlus ? 'flex-end' : 'auto' }}
               />
-              <Text style={[styles.percentageText, { color: getColor() }]}>
-                {selectedPercentage}%
-              </Text>
+              <Text style={percentageStyles}>{selectedPercentage}%</Text>
             </View>
           </View>
         )}
@@ -90,37 +98,5 @@ const CurrencyItem: React.FC<CurrencyItemPropsInterface> = ({ currency }) => {
     </TouchableOpacity>
   );
 };
-
-const styles = StyleSheet.create({
-  listContainer: {
-    padding: 16,
-    borderTopWidth: 1,
-    borderTopColor: colors.ui.primary,
-    flex: 1,
-    display: 'flex',
-    flexDirection: 'row',
-  },
-  contentContainer: {
-    paddingLeft: 20,
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  leftContent: {},
-  rightContent: {},
-  percentageContainer: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'flex-end',
-    alignItems: 'center',
-  },
-  percentageText: {
-    textAlign: 'right',
-    marginLeft: 4,
-  },
-  currencySymbol: {
-    color: colors.text.secondary,
-  },
-});
 
 export default CurrencyItem;

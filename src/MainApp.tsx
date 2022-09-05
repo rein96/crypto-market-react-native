@@ -9,7 +9,7 @@ import {
   Text,
   View,
 } from 'react-native';
-import CurrencyItem from './components/CurrencyItem';
+import CurrencyItem from './components/CurrencyItem/CurrencyItem';
 import { useCurrencyList } from './hooks/useCurrencyList';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import { categoryList } from './constants';
