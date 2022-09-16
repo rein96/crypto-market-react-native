@@ -47,11 +47,6 @@ export interface ResponseInterface<T, U = void> {
   [key: string]: U;
 }
 
-export interface PriceChangesResponseInterface
-  extends ResponseInterface<PriceDataInterface[]> {
-  sortedPricePairData: SortedPricePairInterface;
-}
-
 export interface CategoryListInterface {
   name: string;
   iconName: AntDesignIconNameType;

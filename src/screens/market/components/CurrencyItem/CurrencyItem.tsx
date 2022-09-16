@@ -16,11 +16,9 @@ const CurrencyItem: React.FC<CurrencyItemPropsInterface> = ({ currency }) => {
   // Remove IDR Token
   if (currency.currencySymbol === 'Rp') return <View></View>;
 
-  const { data: priceChangesResponseData } = usePriceChanges();
+  const { data: sortedPricePairData } = usePriceChanges();
 
   const styles = useMemo(() => createStyles(), []);
-
-  const sortedPricePairData = priceChangesResponseData?.sortedPricePairData;
 
   /** symbol in lowercase | ex: 'btc' */
   const symbol = currency.currencySymbol.toLowerCase();
