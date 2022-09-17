@@ -47,4 +47,17 @@ const categoryList: CategoryListInterface[] = [
   },
 ];
 
-export { UPDATE_CURRENCY_INTERVAL, UPDATE_PRICE_INTERVAL, categoryList };
+const SCREENS = {
+  HOME: 'Home',
+  DISCOVER: 'Discover',
+  MARKET: 'Market',
+  WALLET: 'Wallet',
+  ACCOUNT: 'Account',
+};
+
+export {
+  UPDATE_CURRENCY_INTERVAL,
+  UPDATE_PRICE_INTERVAL,
+  categoryList,
+  SCREENS,
+};

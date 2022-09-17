@@ -15,8 +15,6 @@ export default () => {
     container: {
       flex: 1,
       marginTop: StatusBar.currentHeight,
-      borderBottomColor: 'grey',
-      borderBottomWidth: 1,
     },
     headingText: {
       fontWeight: '700',

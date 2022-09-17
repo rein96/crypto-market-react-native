@@ -1,5 +1,5 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import MarketScreen from './src/screens/market/MarketScreen';
+import Navigation from './src/navigation';
 
 const queryClient = new QueryClient({
   defaultOptions: { queries: { retry: 2 } },
@@ -8,7 +8,7 @@ const queryClient = new QueryClient({
 export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <MarketScreen />
+      <Navigation />
     </QueryClientProvider>
   );
 }
