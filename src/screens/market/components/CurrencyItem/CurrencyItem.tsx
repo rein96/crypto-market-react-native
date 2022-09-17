@@ -97,4 +97,4 @@ const CurrencyItem: React.FC<CurrencyItemPropsInterface> = ({ currency }) => {
   );
 };
 
-export default CurrencyItem;
+export default React.memo(CurrencyItem);

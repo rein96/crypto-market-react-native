@@ -52,6 +52,7 @@ const MainContainer = () => {
       <View style={styles.list}>
         {refreshing ? <ActivityIndicator /> : null}
         <FlatList
+          initialNumToRender={10}
           data={data?.payload}
           renderItem={(currency) => <CurrencyItem currency={currency.item} />}
           refreshControl={
