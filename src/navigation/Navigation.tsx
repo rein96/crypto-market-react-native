@@ -1,13 +1,15 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import MarketScreen from '../screens/market/MarketScreen';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { colors, SCREENS } from '../constants';
-import HomeScreen from '../screens/home/HomeScreen';
-import DiscoverScreen from '../screens/discover/DiscoverScreen';
-import WalletScreen from '../screens/wallet/WalletScreen';
-import AccountScreen from '../screens/account/AccountScreen';
+import {
+  AccountScreen,
+  DiscoverScreen,
+  HomeScreen,
+  MarketScreen,
+  WalletScreen,
+} from '../screens';
 
 const Tab = createBottomTabNavigator();
 
