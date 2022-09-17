@@ -4,6 +4,10 @@ import MarketScreen from '../screens/market/MarketScreen';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { colors, SCREENS } from '../constants';
+import HomeScreen from '../screens/home/HomeScreen';
+import DiscoverScreen from '../screens/discover/DiscoverScreen';
+import WalletScreen from '../screens/wallet/WalletScreen';
+import AccountScreen from '../screens/account/AccountScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -25,7 +29,7 @@ const MyTabs = () => {
     >
       <Tab.Screen
         name={SCREENS.HOME}
-        component={MarketScreen}
+        component={HomeScreen}
         options={{
           headerShown: false,
           tabBarIcon: ({ color, size }) => (
@@ -35,7 +39,7 @@ const MyTabs = () => {
       />
       <Tab.Screen
         name={SCREENS.DISCOVER}
-        component={MarketScreen}
+        component={DiscoverScreen}
         options={{
           headerShown: false,
           tabBarIcon: ({ color, size }) => (
@@ -63,7 +67,7 @@ const MyTabs = () => {
       />
       <Tab.Screen
         name={SCREENS.WALLET}
-        component={MarketScreen}
+        component={WalletScreen}
         options={{
           headerShown: false,
           tabBarIcon: ({ color, size }) => (
@@ -77,7 +81,7 @@ const MyTabs = () => {
       />
       <Tab.Screen
         name={SCREENS.ACCOUNT}
-        component={MarketScreen}
+        component={AccountScreen}
         options={{
           headerShown: false,
           tabBarIcon: ({ color, size }) => (
