@@ -47,17 +47,32 @@ const categoryList: CategoryListInterface[] = [
   },
 ];
 
+/**
+ * Use const for auto-generated type
+ * @see https://stackoverflow.com/questions/53662208/types-from-both-keys-and-values-of-object-in-typescript
+ */
 const SCREENS = {
   HOME: 'Home',
   DISCOVER: 'Discover',
   MARKET: 'Market',
   WALLET: 'Wallet',
   ACCOUNT: 'Account',
-};
+  PRODUCT: 'Product',
+} as const;
+
+const STACKS = {
+  HOME_STACK: 'Home_STACK',
+  DISCOVER_STACK: 'Discover_STACK',
+  MARKET_STACK: 'Market_STACK',
+  WALLET_STACK: 'Wallet_STACK',
+  ACCOUNT_STACK: 'Account_STACK',
+  PRODUCT_STACK: 'Product_STACK',
+} as const;
 
 export {
   UPDATE_CURRENCY_INTERVAL,
   UPDATE_PRICE_INTERVAL,
   categoryList,
   SCREENS,
+  STACKS,
 };

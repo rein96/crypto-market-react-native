@@ -4,9 +4,10 @@ import { CryptocurrencyInterface, PriceDataInterface } from '../../../../types';
 import { SvgUri } from 'react-native-svg';
 import { usePriceChanges } from '../../../../hooks/usePriceChanges';
 import { rupiahFormatter } from '../../../../utils';
-import { colors } from '../../../../constants';
+import { colors, SCREENS } from '../../../../constants';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import createStyles from './CurrencyItem.style';
+import { useNavigation } from '@react-navigation/native';
 
 interface CurrencyItemPropsInterface {
   currency: CryptocurrencyInterface;
@@ -17,6 +18,7 @@ const CurrencyItem: React.FC<CurrencyItemPropsInterface> = ({ currency }) => {
   if (currency.currencySymbol === 'Rp') return <View></View>;
 
   const { data: sortedPricePairData } = usePriceChanges();
+  const navigation = useNavigation();
 
   const styles = useMemo(() => createStyles(), []);
 
@@ -56,8 +58,12 @@ const CurrencyItem: React.FC<CurrencyItemPropsInterface> = ({ currency }) => {
     [getColor]
   );
 
+  const handleOnPress = () => {
+    navigation.navigate(SCREENS.PRODUCT, { symbol });
+  };
+
   return (
-    <TouchableOpacity style={styles.listContainer}>
+    <TouchableOpacity style={styles.listContainer} onPress={handleOnPress}>
       {/* Image */}
       <View>
         <SvgUri

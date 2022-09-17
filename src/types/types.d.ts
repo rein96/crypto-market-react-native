@@ -51,3 +51,20 @@ export interface CategoryListInterface {
   name: string;
   iconName: AntDesignIconNameType;
 }
+
+/**
+ * Global type for react-navigation
+ * @see https://stackoverflow.com/questions/68779417/navigation-navigatehome-showing-some-error-in-typescript
+ */
+export type RootStackParamList = {
+  Home: undefined;
+  Discover: undefined;
+  Market: undefined;
+  Product: { symbol: string };
+};
+
+declare global {
+  namespace ReactNavigation {
+    interface RootParamList extends RootStackParamList {}
+  }
+}
