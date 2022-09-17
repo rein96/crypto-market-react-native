@@ -2,8 +2,10 @@ import React, { useMemo, useState } from 'react';
 import {
   ActivityIndicator,
   FlatList,
+  Platform,
   RefreshControl,
   SafeAreaView,
+  StatusBar,
   Text,
   View,
 } from 'react-native';
@@ -20,6 +22,11 @@ const MainContainer = () => {
 
   const styles = useMemo(() => createStyles(), []);
 
+  const barStyle = useMemo(
+    () => (Platform.OS === 'ios' ? 'dark-content' : 'default'),
+    [Platform.OS]
+  );
+
   const handleRefresh = () => {
     setRefreshing(true);
     refetch();
@@ -28,6 +35,7 @@ const MainContainer = () => {
 
   return (
     <SafeAreaView style={styles.container}>
+      <StatusBar barStyle={barStyle} />
       {/* Navbar */}
       <View style={styles.navigation}>
         <View>
