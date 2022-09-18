@@ -1,10 +1,11 @@
 ## Crypto Market Mobile App (React Native)
 
 <div>
-<img width="369" alt="Screen Shot 2022-09-05 at 01 00 19" src="https://user-images.githubusercontent.com/50010891/188327781-ad8798fb-0e7e-4077-a334-625faa0738c5.png">
 
-<img width="369" alt="Screen Shot 2022-09-05 at 01 00 19" src="https://user-images.githubusercontent.com/50010891/188328266-e8b60070-704a-4f28-87ff-5da4a65517a5.jpg">
-</div
+<img width="369" alt="Screen Shot 2022-09-05 at 01 00 19" src="https://user-images.githubusercontent.com/50010891/190918335-2e6b818a-8d93-4225-a934-1509adf2dfb0.png">
+
+<img width="369" alt="Screen Shot 2022-09-05 at 01 00 19" src="https://user-images.githubusercontent.com/50010891/190918411-01e5b437-f963-4cc5-a38f-55d956fd4b6a.jpg">
+</div>
 
 ## Tech Stack
 - React Native
@@ -12,7 +13,7 @@
 - React Query
 - Expo
 
-### Future Improvement
+## Future Improvement
 - Implement Atomic design pattern
 - Add more features and screens
 - Add Bottom Tabs Navigator
@@ -25,10 +26,10 @@
 
 iOS:
 ```
-exp://u.expo.dev/update/5b723f9f-cef8-4c4e-83ac-ad7332558c14
+exp://u.expo.dev/update/0cb055e9-62b3-4e66-bcdb-98f94954df22
 ```
 
 Android
 ```
-exp://u.expo.dev/update/76b1e155-22dd-470a-a83a-7f0f11335dd9
+exp://u.expo.dev/update/c6779ed5-b557-4a22-8fe1-ae92f903458a
 ```
