@@ -15,7 +15,6 @@ export default () => {
   return StyleSheet.create<Style>({
     container: {
       flex: 1,
-      marginTop: StatusBar.currentHeight,
       backgroundColor: colors.bg.primary,
     },
     headingText: {
