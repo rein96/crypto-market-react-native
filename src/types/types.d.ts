@@ -1,5 +1,8 @@
 // node_modules/@expo/vector-icons/build/AntDesign.d.ts
 import type AntDesignIconNameType from '@expo/vector-icons/build/AntDesign';
+
+/** Helpful for generating interfaces: https://app.quicktype.io/?l=ts */
+
 export interface PriceDataInterface {
   pair: string;
   latestPrice: string;
@@ -67,4 +70,11 @@ declare global {
   namespace ReactNavigation {
     interface RootParamList extends RootStackParamList {}
   }
+}
+
+export interface RouteInterface<Params> {
+  key: string;
+  name: string;
+  params: Params;
+  path: string;
 }
