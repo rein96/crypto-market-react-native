@@ -1,4 +1,5 @@
 import { StatusBar, StyleSheet, TextStyle, ViewStyle } from 'react-native';
+import { colors } from '../../constants';
 
 interface Style {
   container: ViewStyle;
@@ -15,6 +16,7 @@ export default () => {
     container: {
       flex: 1,
       marginTop: StatusBar.currentHeight,
+      backgroundColor: colors.bg.primary,
     },
     headingText: {
       fontWeight: '700',
