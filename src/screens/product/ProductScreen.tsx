@@ -17,7 +17,7 @@ function ProductScreen() {
     <SafeAreaView style={styles.safeContainer}>
       <TopBackNavigation />
       <View style={styles.container}>
-        <Text style={styles.title}>{symbol.toUpperCase()}</Text>
+        <Text style={styles.title}>{symbol?.toUpperCase()}</Text>
       </View>
     </SafeAreaView>
   );

@@ -58,6 +58,7 @@ const SCREENS = {
   WALLET: 'Wallet',
   ACCOUNT: 'Account',
   PRODUCT: 'Product',
+  WATCHLIST: 'Watchlist',
 } as const;
 
 const STACKS = {

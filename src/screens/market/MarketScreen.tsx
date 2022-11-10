@@ -7,16 +7,19 @@ import {
   SafeAreaView,
   StatusBar,
   Text,
+  TouchableOpacity,
   View,
 } from 'react-native';
 import CurrencyItem from './components/CurrencyItem/CurrencyItem';
 import { useCurrencyList } from '../../hooks/useCurrencyList';
 import AntDesign from '@expo/vector-icons/AntDesign';
-import { categoryList } from '../../constants';
+import { categoryList, SCREENS } from '../../constants';
 import CategoryItem from './components/CategoryItem/CategoryItem';
 import createStyles from './MarketScreen.style';
+import { useNavigation } from '@react-navigation/native';
 
 const MainContainer = () => {
+  const navigation = useNavigation();
   const [refreshing, setRefreshing] = useState(false);
   const { data, refetch } = useCurrencyList();
 
@@ -32,6 +35,10 @@ const MainContainer = () => {
     refetch();
     setRefreshing(false);
   };
+  
+  const handleGoToWatchlistPage = () => {
+    navigation.navigate(SCREENS.WATCHLIST)
+  }
 
   return (
     <SafeAreaView style={styles.container}>
@@ -41,10 +48,10 @@ const MainContainer = () => {
         <View>
           <Text style={styles.headingText}>Market</Text>
         </View>
-        <View style={styles.iconsContainer}>
+        <TouchableOpacity style={styles.iconsContainer} onPress={handleGoToWatchlistPage}>
           <AntDesign name='staro' size={28} style={styles.staro} />
           <AntDesign name='search1' size={28} />
-        </View>
+        </TouchableOpacity>
       </View>
 
       {/* Category */}

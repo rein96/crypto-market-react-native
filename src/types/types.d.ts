@@ -64,6 +64,7 @@ export type RootStackParamList = {
   Discover: undefined;
   Market: undefined;
   Product: { symbol: string };
+  Watchlist: undefined;
 };
 
 declare global {

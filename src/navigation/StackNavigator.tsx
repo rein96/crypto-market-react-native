@@ -9,6 +9,7 @@ import {
   ProductScreen,
   WalletScreen,
 } from '../screens';
+import WatchlistScreen from '../screens/watchlist/Watchlist.screen';
 
 const MarketStack = createNativeStackNavigator();
 const HomeStack = createNativeStackNavigator();
@@ -21,6 +22,7 @@ export const MarketStackNavigator = () => {
     <MarketStack.Navigator screenOptions={{ headerShown: false }}>
       <MarketStack.Screen name={SCREENS.MARKET} component={MarketScreen} />
       <MarketStack.Screen name={SCREENS.PRODUCT} component={ProductScreen} />
+      <MarketStack.Screen name={SCREENS.WATCHLIST} component={WatchlistScreen} options={{headerShown: true}} />
     </MarketStack.Navigator>
   );
 };
