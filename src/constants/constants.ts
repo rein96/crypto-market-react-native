@@ -70,10 +70,15 @@ const STACKS = {
   PRODUCT_STACK: 'Product_STACK',
 } as const;
 
+const STORAGE_KEYS = {
+  WATCHLIST_ITEMS: 'WATCHLIST_ITEMS'
+} as const;
+
 export {
   UPDATE_CURRENCY_INTERVAL,
   UPDATE_PRICE_INTERVAL,
   categoryList,
   SCREENS,
   STACKS,
+  STORAGE_KEYS,
 };
